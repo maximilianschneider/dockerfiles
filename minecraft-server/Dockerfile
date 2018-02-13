@@ -27,7 +27,7 @@ RUN addgroup -g 1000 minecraft \
   && mkdir /plugins \
   && chown minecraft:minecraft /data /config /mods /plugins /home/minecraft
 
-EXPOSE 25565/tcp 25565/upd 25575
+EXPOSE 25565 25575
 
 ADD https://github.com/itzg/restify/releases/download/1.0.4/restify_linux_amd64 /usr/local/bin/restify
 ADD https://github.com/itzg/rcon-cli/releases/download/1.3/rcon-cli_linux_amd64 /usr/local/bin/rcon-cli
