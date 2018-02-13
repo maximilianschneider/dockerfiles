@@ -1,6 +1,6 @@
 FROM openjdk:8u131-jre-alpine
 
-LABEL maintainer "itzg"
+LABEL maintainer "itzg "
 
 RUN apk add -U \
           openssl \
