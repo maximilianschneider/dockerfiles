@@ -27,7 +27,7 @@ RUN addgroup -g 1000 minecraft \
   && mkdir /plugins \
   && chown minecraft:minecraft /data /config /mods /plugins /home/minecraft
 
-EXPOSE 25565 25575
+PUBLISH 25565 25575
 
 ADD https://github.com/itzg/restify/releases/download/1.0.4/restify_linux_amd64 /usr/local/bin/restify
 ADD https://github.com/itzg/rcon-cli/releases/download/1.3/rcon-cli_linux_amd64 /usr/local/bin/rcon-cli
@@ -44,6 +44,5 @@ ENTRYPOINT [ "/start" ]
 ENV UID=1000 GID=1000 \
     MOTD="A Minecraft Server Powered by Docker" \
     JVM_XX_OPTS="-XX:+UseG1GC" MEMORY="3G" \
-    TYPE=VANILLA VERSION=LATEST FORGEVERSION=RECOMMENDED SPONGEBRANCH=STABLE SPONGEVERSION= LEVEL=world \
-    PVP=true DIFFICULTY=hard \
-    LEVEL_TYPE=DEFAULT ONLINE_MODE=TRUE CONSOLE=true EULA=TRUE
+    TYPE=VANILLA VERSION=LATEST \
+    CONSOLE=true EULA=TRUE
